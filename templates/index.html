@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Добро пожаловать на наш сайт!</h1>
+    
+    <!-- Поиск -->
+    <form action="{{ url_for('search') }}" method="GET">
+        <input type="text" name="query" placeholder="Поиск...">
+        <button type="submit">Найти</button>
+    </form>
+    
+    <!-- Рекламные баннеры -->
+    <div class="banner">
+        <img src="banner1.jpg" alt="Акция">
+    </div>
+    
+    <!-- Список категорий блюд -->
+    <ul>
+        <li><a href="{{ url_for('category', category='pizza') }}">Пицца</a></li>
+        <li><a href="{{ url_for('category', category='sushi') }}">Суши</a></li>
+        <!-- Другие категории -->
+    </ul>
+    
+    <!-- Список ресторанов -->
+    <ul>
+        <li><a href="{{ url_for('restaurant', id=1) }}">Ресторан 1</a></li>
+        <li><a href="{{ url_for('restaurant', id=2) }}">Ресторан 2</a></li>
+        <!-- Другие рестораны -->
+    </ul>
+    
+    <!-- Основные преимущества -->
+    <div class="advantages">
+        <p>Быстрый заказ, удобная доставка, широкий выбор блюд!</p>
+    </div>
+    
+    <!-- Ссылки на страницы регистрации и входа -->
+    <div class="auth-links">
+        <a href="{{ url_for('register') }}">Зарегистрироваться</a>
+        <a href="{{ url_for('login') }}">Войти</a>
+    </div>
+    
+    <!-- Контактная информация и поддержка -->
+    <div class="contact">
+        <p>Телефон: 123-456-789</p>
+        <p>Email: info@example.com</p>
+    </div>
+</body>
+</html>
